@@ -1,103 +1,74 @@
-import React from "react"
+import React, { useState } from "react"
 import Navbar from "../components/Navbar"
-import { useForm, Controller } from "react-hook-form"
-import { Text, View, TextInput } from "react-native"
+import { useForm, FormProvider, SubmitErrorHandler, SubmitHandler } from "react-hook-form"
+import { Text, TextInput, View } from "react-native"
 import Button from "../components/Button"
-import InputWithIcon from "../components/InputWithIcon"
 import { AntDesign } from "@expo/vector-icons"
-import Input from "../components/Input"
-import Dropdown from "../components/Dropdown"
+import MapInput from "../components/MapInput"
+import { FormValues, RootStackParamList } from "../interfaces"
+import ControlledInput from "../components/ControlledInput"
+import { NativeStackScreenProps } from "@react-navigation/native-stack"
+import { useSetRecoilState } from "recoil"
+import completedFormsAtom from "../recoil/forms/atom"
 
-export default function Landing() {
-    const {
-        control,
-        handleSubmit,
-        formState: { errors }
-    } = useForm({
-        defaultValues: {
-            email: "",
-            location: "",
-            products: [],
-            aditionalInfo: ""
-        }
+type Props = NativeStackScreenProps<RootStackParamList, "Form", "MyStack">
+
+export default function Form({ navigation }: Props) {
+    const setCompletedForms = useSetRecoilState(completedFormsAtom)
+
+    const { ...methods } = useForm<FormValues>({
+        defaultValues: {} as FormValues
     })
-    const onSubmit = (data: any) => console.log(data)
+    const onSubmit: SubmitHandler<FormValues> = (completedForm) => {
+        setCompletedForms((oldForms) => [...oldForms, completedForm])
+        navigation.navigate("CompletedForms")
+    }
+
+    const onError: SubmitErrorHandler<FormValues> = (errors, e) => {
+        return console.log("error", errors)
+    }
     return (
-        <View className="h-full p-12 bg-slate-50">
+        <View className="min-h-full p-8 bg-slate-50">
             <Navbar />
             <View className="">
-                <Controller
-                    control={control}
-                    rules={{
-                        required: true
-                    }}
-                    render={({ field: { onChange, onBlur, value } }) => (
-                        <>
-                            <Text className="font-semibold">Email</Text>
-                            <InputWithIcon
-                                icon={<AntDesign name="mail" size={18} color="gray" />}
-                                placeholder="alex@kyte.com"
-                                onBlur={onBlur}
-                                onChangeText={onChange}
-                                value={value}
-                            />
-                        </>
-                    )}
-                    name="email"
-                />
-                {errors.email && <Text>This is required.</Text>}
-                <Controller
-                    control={control}
-                    rules={{
-                        maxLength: 100
-                    }}
-                    render={({ field: { onChange, onBlur, value } }) => (
-                        <>
-                            <Text className="font-semibold">Products we should deliver</Text>
-                            <Dropdown />
-                        </>
-                    )}
-                    name="aditionalInfo"
-                />
-                <Controller
-                    control={control}
-                    rules={{
-                        required: true
-                    }}
-                    render={({ field: { onChange, onBlur, value } }) => (
-                        <>
-                            <Text className="font-semibold">Price willing to pay</Text>
-                            <InputWithIcon
-                                icon={<Text className="text-gray-600">Kr</Text>}
-                                placeholder="10000"
-                                onBlur={onBlur}
-                                onChangeText={onChange}
-                                value={value}
-                                isNumber
-                            />
-                        </>
-                    )}
-                    name="email"
-                />
-                <Controller
-                    control={control}
-                    rules={{
-                        maxLength: 100
-                    }}
-                    render={({ field: { onChange, onBlur, value } }) => (
-                        <>
-                            <Text className="font-semibold">Add more info</Text>
-                            <Input
-                                placeholder="Enter your thoughts here..."
-                                onBlur={onBlur}
-                                onChangeText={onChange}
-                                value={value}
-                            />
-                        </>
-                    )}
-                    name="aditionalInfo"
-                />
-                <Button text="Submit" onPress={handleSubmit(onSubmit)} />
+                <FormProvider {...methods}>
+                    <Text className="font-semibold">
+                        Which location do you want us to delivery to?
+                    </Text>
+                    <MapInput setValue={methods.setValue} />
+                    <ControlledInput
+                        name="email"
+                        label="Email"
+                        autoComplete={"off"}
+                        icon={<AntDesign name="mail" size={18} color="gray" />}
+                        placeholder="axel@kyte.com"
+                        keyboardType="email-address"
+                        rules={{
+                            required: "Email is required",
+                            pattern: {
+                                value: /\b[\w\\.+-]+@[\w\\.-]+\.\w{2,4}\b/,
+                                message: "Must be formatted: john.doe@email.com"
+                            }
+                        }}
+                    />
+                    <ControlledInput
+                        name="acceptablePrice"
+                        label="Acceptable price for this service"
+                        placeholder="1000"
+                        icon={<Text className="text-gray-600">NOK</Text>}
+                        keyboardType="numeric"
+                    />
+                    <ControlledInput
+                        name="additionalInfo"
+                        label="Add more info"
+                        placeholder="Enter your thoughts here..."
+                        rules={{
+                            maxLength: 400
+                        }}
+                    />
+                </FormProvider>
+
+                <Button text="Submit" onPress={methods.handleSubmit(onSubmit, onError)} />
             </View>
         </View>
     )

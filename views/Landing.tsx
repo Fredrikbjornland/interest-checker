@@ -4,11 +4,7 @@ import Navbar from "../components/Navbar"
 import type { NativeStackScreenProps } from "@react-navigation/native-stack"
 import Button from "../components/Button"
 import { AntDesign } from "@expo/vector-icons"
-
-type RootStackParamList = {
-    Landing: undefined
-    Form: undefined
-}
+import { RootStackParamList } from "../interfaces"
 
 type Props = NativeStackScreenProps<RootStackParamList, "Landing", "MyStack">
 

@@ -1,6 +1,6 @@
+import { NativeStackScreenProps } from "@react-navigation/native-stack"
 import React from "react"
-import { Image, Text, View } from "react-native"
-var yourPicture = require("../assets/kyte-logo.svg")
+import { Text, View } from "react-native"
 
 export default function Navbar() {
     return (
