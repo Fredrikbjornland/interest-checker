@@ -1,11 +1,14 @@
--   Format currency
--   Color checkmarks in dropdown
--   Fix dropdown component
--   Update favicon and other images in app.json
--   Fikse header greie
--   Style landingpage
--   Style filled form page
--   Style form page
--   Style kart, marker etc
--   Collapse form
--   Legge til default font
+-   [] Format currency
+-   [] Color checkmarks in dropdown
+-   [] Fix dropdown component
+-   [] Update favicon and other images in app.json
+-   [] Fikse header greie
+-   [] Style landingpage
+-   [] Style filled form page
+-   [] Style form page
+-   [] Style kart, marker etc
+-   [] Collapse form
+-   [] Legge til default font
+-   [] Cleare inputfelt når man går tilbake til form
+-   [x] Karte starter der man befinner seg
+-   [] Error handling form page
