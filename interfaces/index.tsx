@@ -8,7 +8,7 @@ export type FormValues = {
     location: Coordinate
     products: string[]
     acceptablePrice: number
-    additionalInfo: string
+    additionalInfo?: string
 }
 
 export type RootStackParamList = {

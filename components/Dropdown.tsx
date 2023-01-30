@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import DropDownPicker from "react-native-dropdown-picker"
 
-import { Product } from "../interfaces"
 import { products } from "../assets/products"
 import { borderGray } from "../assets/colors"
 export type ValueType = string | number | boolean

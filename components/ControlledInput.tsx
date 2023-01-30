@@ -12,11 +12,14 @@ interface TextInputProps extends RNTextInputProps, UseControllerProps {
 const ControlledInput = (props: TextInputProps) => {
     const { name, label, rules, defaultValue, icon, ...inputProps } = props
 
-    const { field } = useController({ name, rules, defaultValue })
+    const {
+        field,
+        fieldState: { error }
+    } = useController({ name, rules, defaultValue })
 
     return (
-        <>
-            <Text className="font-semibold">{label}</Text>
+        <View className="mt-4">
+            <Text className="mb-1 font-semibold">{label}</Text>
             {icon ? (
                 <View className="flex flex-row items-center p-2 border border-gray-300 rounded-md">
                     {icon}
@@ -37,7 +40,8 @@ const ControlledInput = (props: TextInputProps) => {
                     {...inputProps}
                 />
             )}
-        </>
+            {error && <Text className="m-1 text-red-500">{error.message}</Text>}
+        </View>
     )
 }
 

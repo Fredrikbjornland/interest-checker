@@ -47,7 +47,6 @@ export default function MapInput({ setValue }: MapInputProps) {
 
     return (
         <View>
-            <Text>{errorMsg}</Text>
             <MapView
                 showsUserLocation
                 showsMyLocationButton

@@ -1,6 +1,7 @@
 -   [] Format currency
+    https://stackoverflow.com/questions/57101543/dollar-format-regex-in-react-native
 -   [] Color checkmarks in dropdown
--   [] Fix dropdown component
+-   [x] Fix dropdown component
 -   [] Update favicon and other images in app.json
 -   [] Fikse header greie
 -   [] Style landingpage
@@ -9,6 +10,6 @@
 -   [] Style kart, marker etc
 -   [] Collapse form
 -   [] Legge til default font
--   [] Cleare inputfelt når man går tilbake til form
+-   [] Cleare inputfelt når man går tilbake til form etter submit
 -   [x] Karte starter der man befinner seg
 -   [] Error handling form page
