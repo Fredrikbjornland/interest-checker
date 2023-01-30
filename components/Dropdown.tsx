@@ -1,16 +1,26 @@
 import React, { useState } from "react"
 import DropDownPicker from "react-native-dropdown-picker"
-import { borderGray, mainGreen } from "../assets/colors"
+
+import { Product } from "../interfaces"
 import { products } from "../assets/products"
+import { borderGray } from "../assets/colors"
+export type ValueType = string | number | boolean
 
 type DropdownProps = {
     text: string
+    chosenProducts: string[]
+    setProducts: (products: string[]) => void
 }
 
-export default function Dropdown({ text }: DropdownProps) {
+export default function Dropdown({ text, chosenProducts, setProducts }: DropdownProps) {
     const [open, setOpen] = useState(false)
-    const [value, setValue] = useState(null)
     const [items, setItems] = useState(products)
+    // Suboptimal but had to use setvalue
+    const [value, setValue] = useState(chosenProducts)
+
+    const handleChange = (value: ValueType[] | null) => {
+        setProducts(value as string[])
+    }
 
     return (
         <DropDownPicker
@@ -22,6 +32,7 @@ export default function Dropdown({ text }: DropdownProps) {
             setOpen={setOpen}
             setValue={setValue}
             setItems={setItems}
+            onChangeValue={(value) => handleChange(value)}
             mode="BADGE"
             showBadgeDot={false}
             extendableBadgeContainer={true}

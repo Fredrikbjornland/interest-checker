@@ -14,7 +14,6 @@ export default function MapInput({ setValue }: MapInputProps) {
     })
 
     const handleMarkerDragEnd = (e: MarkerDragStartEndEvent) => {
-        console.log("e", e.nativeEvent.coordinate)
         setMarkerCoordinates(e.nativeEvent.coordinate)
         setValue("location", e.nativeEvent.coordinate)
     }

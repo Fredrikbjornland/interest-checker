@@ -5,7 +5,7 @@ import { Text, View } from "react-native"
 import Button from "../components/Button"
 import { AntDesign } from "@expo/vector-icons"
 import MapInput from "../components/MapInput"
-import { FormValues, RootStackParamList } from "../interfaces"
+import { FormValues, Product, RootStackParamList } from "../interfaces"
 import ControlledInput from "../components/ControlledInput"
 import { NativeStackScreenProps } from "@react-navigation/native-stack"
 import { useSetRecoilState } from "recoil"
@@ -28,6 +28,11 @@ export default function Form({ navigation }: Props) {
     const onError: SubmitErrorHandler<FormValues> = (errors, e) => {
         return console.log("error", errors)
     }
+
+    const setProducts = (products: string[]) => {
+        methods.setValue("products", products)
+    }
+
     return (
         <View className="min-h-full p-8 bg-slate-50">
             <Navbar />
@@ -56,7 +61,11 @@ export default function Form({ navigation }: Props) {
                     <Text className="font-semibold">
                         What products would you to get delivered?{" "}
                     </Text>
-                    <Dropdown text="Select products" />
+                    <Dropdown
+                        text="Select products"
+                        setProducts={setProducts}
+                        chosenProducts={methods.getValues("products")}
+                    />
                     <ControlledInput
                         name="acceptablePrice"
                         label="Acceptable price for this service"
