@@ -9,6 +9,7 @@ import Landing from "./views/Landing"
 import { grayBackground } from "./assets/colors"
 import CompletedForms from "./views/CompletedForms"
 import kyteLogo from "./images/kyte-logo-green.png"
+import { Entypo } from "@expo/vector-icons"
 
 const Stack = createNativeStackNavigator()
 
@@ -21,20 +22,25 @@ export default function App() {
                         headerStyle: {
                             backgroundColor: grayBackground
                         },
-                        headerTintColor: "#fff",
-                        headerTitleStyle: {
-                            fontWeight: "bold"
-                        },
                         headerLeft: () => (
-                            <TouchableOpacity onPress={navigation.goBack}>
+                            <TouchableOpacity onPress={() => navigation.navigate("Landing")}>
                                 <Image source={kyteLogo} style={{ width: 50, height: 15 }} />
+                            </TouchableOpacity>
+                        ),
+                        headerRight: () => (
+                            <TouchableOpacity onPress={() => navigation.navigate("CompletedForms")}>
+                                <Entypo name="menu" size={24} color="white" />
                             </TouchableOpacity>
                         )
                     })}
                 >
-                    <Stack.Screen name="Home" component={Landing} />
-                    <Stack.Screen name="Form" component={Form} />
-                    <Stack.Screen name="CompletedForms" component={CompletedForms} />
+                    <Stack.Screen name="Landing" component={Landing} options={{ title: "" }} />
+                    <Stack.Screen name="Form" component={Form} options={{ title: "" }} />
+                    <Stack.Screen
+                        name="CompletedForms"
+                        component={CompletedForms}
+                        options={{ title: "" }}
+                    />
                 </Stack.Navigator>
             </NavigationContainer>
         </RecoilRoot>

@@ -1,5 +1,5 @@
 import React from "react"
-import { Text, View } from "react-native"
+import { ScrollView, Text } from "react-native"
 import { useRecoilState } from "recoil"
 import CompletedForm from "../components/CompletedForm"
 import Layout from "../components/Layout"
@@ -10,14 +10,12 @@ export default function CompletedForms() {
 
     return (
         <Layout>
-            <View className="p-8">
-                <Text className="text-2xl font-semibold text-white">Completed Forms</Text>
-                <View className="">
-                    {completedForms.map((completedForm, index: number) => (
-                        <CompletedForm key={index} completedForm={completedForm} />
-                    ))}
-                </View>
-            </View>
+            <ScrollView>
+                <Text className="text-2xl font-semibold text-white">Completed forms</Text>
+                {completedForms.map((completedForm, index: number) => (
+                    <CompletedForm key={index} completedForm={completedForm} />
+                ))}
+            </ScrollView>
         </Layout>
     )
 }

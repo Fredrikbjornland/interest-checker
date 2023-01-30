@@ -3,6 +3,7 @@ import DropDownPicker from "react-native-dropdown-picker"
 
 import { products } from "../assets/products"
 import { borderGray } from "../assets/colors"
+import { View } from "react-native"
 export type ValueType = string | number | boolean
 
 type DropdownProps = {
@@ -36,10 +37,14 @@ export default function Dropdown({ text, chosenProducts, setProducts }: Dropdown
             showBadgeDot={false}
             extendableBadgeContainer={true}
             dropDownContainerStyle={{
-                borderColor: borderGray
+                borderColor: borderGray,
+                backgroundColor: "white",
+                zIndex: 1000,
+                elevation: 1000
             }}
             style={{
-                borderColor: borderGray
+                borderColor: borderGray,
+                zIndex: 1000
             }}
             badgeStyle={{
                 paddingVertical: 3,

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { UseFormSetValue } from "react-hook-form"
 import MapView, { Marker, MarkerDragStartEndEvent } from "react-native-maps"
 import * as Location from "expo-location"
-import { Image, Platform, View } from "react-native"
+import { Platform, View } from "react-native"
 import Device from "expo-device"
 
 import { Coordinate, FormValues } from "../interfaces"

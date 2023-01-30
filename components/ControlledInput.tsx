@@ -1,5 +1,5 @@
 import React from "react"
-import { useController, UseControllerProps, useFormContext } from "react-hook-form"
+import { useController, UseControllerProps } from "react-hook-form"
 import { Text, TextInput, TextInputProps as RNTextInputProps, View } from "react-native"
 
 /* EXTENDING PROPS TYPES TO INHERIT NAME AND RULES FROM USECONTROLLERPROPS */
@@ -18,8 +18,7 @@ const ControlledInput = (props: TextInputProps) => {
     } = useController({ name, rules, defaultValue })
 
     return (
-        <View className="mt-4">
-            <Text className="mb-1 font-semibold text-white">{label}</Text>
+        <>
             {icon ? (
                 <View className="flex flex-row items-center p-2 border border-gray-300 rounded-md">
                     {icon}
@@ -43,7 +42,7 @@ const ControlledInput = (props: TextInputProps) => {
                 />
             )}
             {error && <Text className="m-1 text-red-500">{error.message}</Text>}
-        </View>
+        </>
     )
 }
 

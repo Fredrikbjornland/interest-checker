@@ -6,5 +6,5 @@ type LayoutProps = {
 }
 
 export default function Layout({ children }: LayoutProps) {
-    return <View className="min-h-full bg-darkGray">{children}</View>
+    return <View className="min-h-full p-6 bg-darkGray">{children}</View>
 }
