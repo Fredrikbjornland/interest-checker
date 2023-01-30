@@ -19,12 +19,13 @@ const ControlledInput = (props: TextInputProps) => {
 
     return (
         <View className="mt-4">
-            <Text className="mb-1 font-semibold">{label}</Text>
+            <Text className="mb-1 font-semibold text-white">{label}</Text>
             {icon ? (
                 <View className="flex flex-row items-center p-2 border border-gray-300 rounded-md">
                     {icon}
                     <TextInput
-                        className="flex-1 ml-2"
+                        className="flex-1 ml-2 text-white"
+                        placeholderTextColor="gray"
                         onChangeText={field.onChange}
                         onBlur={field.onBlur}
                         value={field.value}
@@ -33,8 +34,9 @@ const ControlledInput = (props: TextInputProps) => {
                 </View>
             ) : (
                 <TextInput
-                    className="flex flex-row items-center p-2 border border-gray-300 rounded-md"
+                    className="flex flex-row items-center p-2 text-white border border-gray-300 rounded-md"
                     onChangeText={field.onChange}
+                    placeholderTextColor="gray"
                     onBlur={field.onBlur}
                     value={field.value}
                     {...inputProps}

@@ -4,12 +4,12 @@
     "slug": "react-native-test",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./images/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./images/kyte-logo-green.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#232230"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -22,12 +22,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./images/kyte-logo-green.png",
+        "backgroundColor": "#232230"
       }
     },
     "web": {
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./images/favicon.png"
     }
   }
 }

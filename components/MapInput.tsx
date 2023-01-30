@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { UseFormSetValue } from "react-hook-form"
 import MapView, { Marker, MarkerDragStartEndEvent } from "react-native-maps"
 import * as Location from "expo-location"
-import { Platform, View, Text } from "react-native"
+import { Image, Platform, View } from "react-native"
 import Device from "expo-device"
 
 import { Coordinate, FormValues } from "../interfaces"
@@ -48,17 +48,16 @@ export default function MapInput({ setValue }: MapInputProps) {
     return (
         <View>
             <MapView
-                showsUserLocation
-                showsMyLocationButton
+                // showsUserLocation
+                // showsMyLocationButton
                 className="w-full h-64"
                 region={{ ...markerCoordinates, latitudeDelta: 0.5, longitudeDelta: 0.5 }}
             >
                 <Marker
-                    className="z-10"
                     draggable
                     coordinate={markerCoordinates}
                     onDragEnd={(e) => handleMarkerDragEnd(e)}
-                    image={require("../assets/images/favicon.png")}
+                    // image={require("../images/marker.png")}
                 />
             </MapView>
         </View>
