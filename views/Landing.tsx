@@ -1,10 +1,9 @@
 import React from "react"
-import { Text, View } from "react-native"
+import { ScrollView, Text, View } from "react-native"
 import { AntDesign } from "@expo/vector-icons"
 import type { NativeStackScreenProps } from "@react-navigation/native-stack"
 
 import Button from "../components/Button"
-import Layout from "../components/Layout"
 import { RootStackParamList } from "../interfaces"
 
 type Props = NativeStackScreenProps<RootStackParamList, "Landing", "MyStack">
@@ -13,7 +12,7 @@ export default function Landing({ navigation }: Props) {
     const navigateToForm = () => navigation.navigate("Form")
 
     return (
-        <Layout>
+        <ScrollView className="min-h-full p-6 bg-darkGray">
             <View className="flex flex-col items-center justify-center h-full pt-8 space-y-4">
                 <View>
                     <Text className="mb-2 text-4xl font-semibold text-white">Kyte</Text>
@@ -26,7 +25,14 @@ export default function Landing({ navigation }: Props) {
                     onPress={navigateToForm}
                     iconEnd={<AntDesign name="arrowright" size={16} color="white" />}
                 />
+                <Text className="text-white">Learn more</Text>
+                <Button
+                    text="I want Kyte"
+                    onPress={navigateToForm}
+                    iconEnd={<AntDesign name="arrowright" size={16} color="white" />}
+                />
+                <View className="h-[500px] w-[500px] bg-green" />
             </View>
-        </Layout>
+        </ScrollView>
     )
 }
