@@ -1,28 +1,40 @@
-import React from "react"
-import { MultipleSelectList } from "react-native-dropdown-select-list"
+import React, { useState } from "react"
+import DropDownPicker from "react-native-dropdown-picker"
+import { borderGray, mainGreen } from "../assets/colors"
+import { products } from "../assets/products"
 
-type DropdownProps = {}
+type DropdownProps = {
+    text: string
+}
 
-export default function Dropdown({}: DropdownProps) {
-    const [selected, setSelected] = React.useState([])
-
-    const data = [
-        { key: "1", value: "Mobiles" },
-        { key: "2", value: "Appliances" },
-        { key: "3", value: "Cameras" },
-        { key: "4", value: "Computers" },
-        { key: "5", value: "Vegetables" },
-        { key: "6", value: "Diary Products" },
-        { key: "7", value: "Drinks" }
-    ]
+export default function Dropdown({ text }: DropdownProps) {
+    const [open, setOpen] = useState(false)
+    const [value, setValue] = useState(null)
+    const [items, setItems] = useState(products)
 
     return (
-        <MultipleSelectList
-            setSelected={(val: any) => setSelected(val)}
-            data={data}
-            save="value"
-            onSelect={() => console.log(selected)}
-            label="Categories"
+        <DropDownPicker
+            placeholder={text}
+            multiple={true}
+            open={open}
+            value={value}
+            items={items}
+            setOpen={setOpen}
+            setValue={setValue}
+            setItems={setItems}
+            mode="BADGE"
+            showBadgeDot={false}
+            extendableBadgeContainer={true}
+            dropDownContainerStyle={{
+                borderColor: borderGray
+            }}
+            style={{
+                borderColor: borderGray
+            }}
+            badgeStyle={{
+                paddingVertical: 3,
+                paddingHorizontal: 5
+            }}
         />
     )
 }

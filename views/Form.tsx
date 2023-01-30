@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Navbar from "../components/Navbar"
 import { useForm, FormProvider, SubmitErrorHandler, SubmitHandler } from "react-hook-form"
-import { Text, TextInput, View } from "react-native"
+import { Text, View } from "react-native"
 import Button from "../components/Button"
 import { AntDesign } from "@expo/vector-icons"
 import MapInput from "../components/MapInput"
@@ -10,6 +10,7 @@ import ControlledInput from "../components/ControlledInput"
 import { NativeStackScreenProps } from "@react-navigation/native-stack"
 import { useSetRecoilState } from "recoil"
 import completedFormsAtom from "../recoil/forms/atom"
+import Dropdown from "../components/Dropdown"
 
 type Props = NativeStackScreenProps<RootStackParamList, "Form", "MyStack">
 
@@ -51,6 +52,11 @@ export default function Form({ navigation }: Props) {
                             }
                         }}
                     />
+
+                    <Text className="font-semibold">
+                        What products would you to get delivered?{" "}
+                    </Text>
+                    <Dropdown text="Select products" />
                     <ControlledInput
                         name="acceptablePrice"
                         label="Acceptable price for this service"
