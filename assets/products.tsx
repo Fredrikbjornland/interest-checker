@@ -15,19 +15,25 @@ export const products: Product[] = [
     },
     {
         key: "2",
-        value: "Appliances",
-        label: "Appliances",
+        value: "Medicine",
+        label: "Medicine",
+        icon: () => <AntDesign name="medicinebox" size={14} color={mainGreen} />
+    },
+    {
+        key: "3",
+        value: "Food",
+        label: "Food",
         icon: () => <FontAwesome5 name="hamburger" size={14} color={mainGreen} />
     },
 
     {
-        key: "3",
+        key: "4",
         value: "Cameras",
         label: "Cameras",
-        icon: () => <AntDesign name="check" size={14} color={mainGreen} />
+        icon: () => <AntDesign name="camera" size={14} color={mainGreen} />
     },
     {
-        key: "4",
+        key: "5",
         value: "Groceries",
         label: "Groceries",
         icon: () => <MaterialIcons name="local-grocery-store" color={mainGreen} />

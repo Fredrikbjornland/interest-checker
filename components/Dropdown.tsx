@@ -3,7 +3,6 @@ import DropDownPicker from "react-native-dropdown-picker"
 
 import { products } from "../assets/products"
 import { borderGray } from "../assets/colors"
-import { View } from "react-native"
 export type ValueType = string | number | boolean
 
 type DropdownProps = {
