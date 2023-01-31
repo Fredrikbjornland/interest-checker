@@ -34,7 +34,7 @@ export default function InfoKyte() {
                     proving that the future is already here.
                 </Text>
             </View>
-            <View className="mt-4">
+            <View className="mt-6">
                 <Text className="mb-2 text-2xl font-semibold text-white underline decoration-green ">
                     How it works
                 </Text>
