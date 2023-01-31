@@ -18,9 +18,11 @@ export default function Landing({ navigation }: Props) {
         <ScrollView className="min-h-full p-6 bg-darkGray">
             <View className="flex flex-col items-center justify-center h-screen space-y-12">
                 <View className="w-full ">
-                    <Text className="mb-2 text-4xl font-semibold text-white">Kyte</Text>
-                    <Text className="mb-12 font-semibold text-slate-200 text-large">
-                        Instant drone delivery
+                    <Text className="mb-2 text-4xl font-semibold text-white">
+                        Kyte - Instant drone delivery
+                    </Text>
+                    <Text className="mb-12 font-semibold text-slate-300 text-large">
+                        Help us make drone delivery arrive to your area by clicking the button below
                     </Text>
                 </View>
                 <Button
