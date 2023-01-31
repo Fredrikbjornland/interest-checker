@@ -26,7 +26,10 @@ export default function FirstFormSection({ methods }: FirstFormSectionProps) {
                     />
                 </Question>
             </View>
-            <Question label="Acceptable price for this service">
+            <Question
+                label="Acceptable price for this service"
+                description="How much would you be willing to pay as a delivery fee to this location?"
+            >
                 <ControlledInput
                     name="acceptablePrice"
                     label="Acceptable price for this service"
@@ -35,7 +38,7 @@ export default function FirstFormSection({ methods }: FirstFormSectionProps) {
                     keyboardType="number-pad"
                 />
             </Question>
-            <Question label="Add more info" description="Do you have anything else to add">
+            <Question label="Additional info" description="Do you want to tell us anything else?">
                 <ControlledInput
                     name="additionalInfo"
                     label="Add more info"

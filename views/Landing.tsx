@@ -24,12 +24,13 @@ export default function Landing({ navigation }: Props) {
                     </Text>
                 </View>
                 <Button
+                    size="large"
                     text="I want Kyte"
                     onPress={navigateToForm}
                     iconEnd={<AntDesign name="arrowright" size={16} color="white" />}
                 />
                 <View className="flex flex-col items-center space-y-2">
-                    <Text className="text-white">Learn more</Text>
+                    <Text className="font-semibold text-white text-large">Learn more</Text>
                     <TouchableOpacity>
                         <AntDesign name="arrowdown" size={24} color={mainGreen} />
                     </TouchableOpacity>

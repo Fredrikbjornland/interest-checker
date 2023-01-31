@@ -20,7 +20,7 @@ const ControlledInput = (props: TextInputProps) => {
     return (
         <>
             {icon ? (
-                <View className="flex flex-row items-center p-2 border border-gray-300 rounded-md">
+                <View className="flex flex-row items-center p-3 border border-gray-300 rounded-md">
                     {icon}
                     <TextInput
                         className="flex-1 ml-2 text-white"
@@ -33,7 +33,7 @@ const ControlledInput = (props: TextInputProps) => {
                 </View>
             ) : (
                 <TextInput
-                    className="flex flex-row items-center p-2 text-white border border-gray-300 rounded-md"
+                    className="flex flex-row items-center p-3 text-white border border-gray-300 rounded-md"
                     onChangeText={field.onChange}
                     placeholderTextColor="gray"
                     onBlur={field.onBlur}

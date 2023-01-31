@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import DropDownPicker from "react-native-dropdown-picker"
 
 import { products } from "../assets/products"
-import { borderGray } from "../assets/colors"
+import { borderGray, grayBackground, mainGreen } from "../assets/colors"
 export type ValueType = string | number | boolean
 
 type DropdownProps = {
@@ -23,6 +23,7 @@ export default function Dropdown({ text, chosenProducts, setProducts }: Dropdown
 
     return (
         <DropDownPicker
+            theme="DARK"
             placeholder={text}
             multiple={true}
             open={open}
@@ -37,14 +38,20 @@ export default function Dropdown({ text, chosenProducts, setProducts }: Dropdown
             extendableBadgeContainer={true}
             dropDownContainerStyle={{
                 borderColor: borderGray,
-                backgroundColor: "white",
+                backgroundColor: grayBackground,
                 zIndex: 1000,
                 elevation: 1000
             }}
             style={{
                 borderColor: borderGray,
+                backgroundColor: "transparent",
                 zIndex: 1000
             }}
+            badgeTextStyle={{
+                color: "white",
+                fontWeight: "bold"
+            }}
+            badgeColors={[mainGreen]}
             badgeStyle={{
                 paddingVertical: 3,
                 paddingHorizontal: 5

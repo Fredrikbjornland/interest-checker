@@ -64,7 +64,7 @@ export default function CompletedForm({ completedForm }: CompletedFormProps) {
                     >
                         <View className="flex flex-row flex-wrap justify-center">
                             {completedForm.products?.map((product: string, index: number) => (
-                                <View className="px-2 py-1 mx-1 rounded-lg bg-green" key={index}>
+                                <View className="px-2 py-1 m-1 rounded-lg bg-green" key={index}>
                                     <Text className="font-semibold text-white">{product}</Text>
                                 </View>
                             ))}

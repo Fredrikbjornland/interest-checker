@@ -1,27 +1,14 @@
--   [] Format currency
+-   [] Format currency input felt
     https://stackoverflow.com/questions/57101543/dollar-format-regex-in-react-native
 -   [] Color checkmarks in dropdown
 -   [x] Fix dropdown component
--   [] Update favicon and other images in app.json
--   [] Fikse header greie
+-   [x] Update favicon and other images in app.json
+-   [] Legge til hamburgermenu i header
 -   [] Style landingpage
--   [] Style filled form page
--   [] Style form page
--   [] Style kart, marker etc
--   [] Collapse form
+-   [] Style kart, marker
+-   [x] Collapse form
 -   [] Legge til default font
--   [] Cleare inputfelt når man går tilbake til form etter submit
+-   [] Cleare products når man går tilbake til form etter submit
 -   [x] Karte starter der man befinner seg
 -   [] Error handling form page
-
-Tastatur går ikke ned på pengegreie
-
-Ikke tyhdelig hva som skjer med mailen
-
-Kan ikke se hva man skriver
-
-Contact form
-Products går ut av container
-
-Dropdown
-Kunne vært tomme bokser som blir
+-   [] Close keyboard when clicking outside

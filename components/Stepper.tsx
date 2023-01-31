@@ -1,16 +1,17 @@
 import React, { useState } from "react"
-import { SubmitErrorHandler, SubmitHandler } from "react-hook-form"
 import { View } from "react-native"
 import { useSetRecoilState } from "recoil"
-import { FormValues, RootStackParamList } from "../interfaces"
+import { SubmitErrorHandler, SubmitHandler, UseFormReturn } from "react-hook-form"
 import completedFormsAtom from "../recoil/forms/atom"
-import Button from "./Button"
 import { useNavigation } from "@react-navigation/native"
 import { StackNavigationProp } from "@react-navigation/stack"
 
+import { FormValues, RootStackParamList } from "../interfaces"
+import Button from "./Button"
+
 type StepperProps = {
     children: React.ReactNode[]
-    methods: any
+    methods: UseFormReturn<FormValues>
 }
 
 export default function index({ children, methods }: StepperProps) {
@@ -38,12 +39,16 @@ export default function index({ children, methods }: StepperProps) {
                 {isFirstChild() ? (
                     <View />
                 ) : (
-                    <Button text="Back" outline onPress={() => setIndex(index - 1)} />
+                    <Button size="large" text="Back" outline onPress={() => setIndex(index - 1)} />
                 )}
                 {isLastChild() ? (
-                    <Button text="Submit" onPress={methods.handleSubmit(onSubmit, onError)} />
+                    <Button
+                        size="large"
+                        text="Submit"
+                        onPress={methods.handleSubmit(onSubmit, onError)}
+                    />
                 ) : (
-                    <Button text="Next" onPress={() => setIndex(index + 1)} />
+                    <Button size="large" text="Next" onPress={() => setIndex(index + 1)} />
                 )}
             </View>
         </View>

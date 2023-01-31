@@ -16,6 +16,10 @@ export default function MapInput({ setValue }: MapInputProps) {
         latitude: 37.78825,
         longitude: -122.4324
     })
+    const [initialCoordinates, setInitialCoordinates] = useState<Coordinate>({
+        latitude: 37.78825,
+        longitude: -122.4324
+    })
 
     // Not that nessesary when you have showsUserLocationbut it's nice to have
     useEffect(() => {
@@ -37,6 +41,7 @@ export default function MapInput({ setValue }: MapInputProps) {
             let { coords } = await Location.getCurrentPositionAsync({})
             const { longitude, latitude } = coords
             setMarkerCoordinates({ longitude, latitude })
+            setInitialCoordinates({ longitude, latitude })
         })()
     }, [])
 
@@ -51,7 +56,7 @@ export default function MapInput({ setValue }: MapInputProps) {
                 // showsUserLocation
                 // showsMyLocationButton
                 className="w-full h-64"
-                region={{ ...markerCoordinates, latitudeDelta: 0.5, longitudeDelta: 0.5 }}
+                region={{ ...initialCoordinates, latitudeDelta: 0.5, longitudeDelta: 0.5 }}
             >
                 <Marker
                     draggable

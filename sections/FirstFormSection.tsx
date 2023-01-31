@@ -34,7 +34,10 @@ export default function FirstFormSection({ methods }: FirstFormSectionProps) {
                 />
             </Question>
 
-            <Question label="Where should Kyte deliver to?">
+            <Question
+                label="Where should Kyte deliver to?"
+                description="Move the marker to the palce you want Kyte to deliver"
+            >
                 <MapInput setValue={methods.setValue} />
             </Question>
         </>
