@@ -54,8 +54,6 @@ export default function MapInput({ setValue }: MapInputProps) {
     return (
         <View>
             <MapView
-                // showsUserLocation
-                // showsMyLocationButton
                 className="w-full h-48"
                 region={{ ...initialCoordinates, latitudeDelta: 0.5, longitudeDelta: 0.5 }}
             >
@@ -63,7 +61,6 @@ export default function MapInput({ setValue }: MapInputProps) {
                     draggable
                     coordinate={markerCoordinates}
                     onDragEnd={(e) => handleMarkerDragEnd(e)}
-                    // image={require("../images/marker.png")}
                 />
             </MapView>
         </View>

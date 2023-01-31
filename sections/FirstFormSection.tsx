@@ -1,6 +1,7 @@
 import React from "react"
-import ControlledInput from "../components/ControlledInput"
 import { AntDesign } from "@expo/vector-icons"
+
+import ControlledInput from "../components/ControlledInput"
 import Question from "../components/Question"
 
 export default function FirstFormSection() {

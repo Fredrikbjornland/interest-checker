@@ -17,7 +17,7 @@ export default function Form() {
         <View className="min-h-full p-6 bg-darkGray">
             <FormProvider {...methods}>
                 <Stepper methods={methods}>
-                    <FirstFormSection methods={methods} />
+                    <FirstFormSection />
                     <SecondFormSection methods={methods} />
                     <ThirdFormSection methods={methods} />
                 </Stepper>

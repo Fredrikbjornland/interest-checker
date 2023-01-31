@@ -1,11 +1,8 @@
-import React, { useState } from "react"
+import React from "react"
 import { UseFormSetValue } from "react-hook-form"
-import { StyleSheet, Text, View } from "react-native"
-import { TouchableOpacity } from "react-native-gesture-handler"
-import { SegmentedButtons } from "react-native-paper"
+import { Text, View } from "react-native"
 
 import { FormValues } from "../interfaces"
-import Button from "./Button"
 import LocationSearch from "./LocationSearch"
 import MapInput from "./MapInput"
 
