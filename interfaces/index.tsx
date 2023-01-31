@@ -1,3 +1,5 @@
+import { UseFormReturn } from "react-hook-form"
+
 export type Coordinate = {
     latitude: number
     longitude: number
@@ -23,4 +25,8 @@ export type Product = {
     value: string
     // Call back function to fit the interface of the dropdown component
     icon: () => JSX.Element
+}
+
+export type StepProps = {
+    methods: UseFormReturn<FormValues>
 }

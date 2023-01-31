@@ -10,6 +10,7 @@ import { Coordinate, FormValues } from "../interfaces"
 type MapInputProps = {
     setValue: UseFormSetValue<FormValues>
 }
+
 export default function MapInput({ setValue }: MapInputProps) {
     const [errorMsg, setErrorMsg] = useState<string | null>(null)
     const [markerCoordinates, setMarkerCoordinates] = useState<Coordinate>({
@@ -55,7 +56,7 @@ export default function MapInput({ setValue }: MapInputProps) {
             <MapView
                 // showsUserLocation
                 // showsMyLocationButton
-                className="w-full h-64"
+                className="w-full h-48"
                 region={{ ...initialCoordinates, latitudeDelta: 0.5, longitudeDelta: 0.5 }}
             >
                 <Marker

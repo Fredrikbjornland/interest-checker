@@ -1,15 +1,9 @@
 import React from "react"
-import { Text, View } from "react-native"
 import ControlledInput from "../components/ControlledInput"
 import { AntDesign } from "@expo/vector-icons"
-import MapInput from "../components/MapInput"
 import Question from "../components/Question"
 
-type FirstFormSectionProps = {
-    methods: any
-}
-
-export default function FirstFormSection({ methods }: FirstFormSectionProps) {
+export default function FirstFormSection() {
     return (
         <>
             <Question
@@ -32,13 +26,6 @@ export default function FirstFormSection({ methods }: FirstFormSectionProps) {
                         }
                     }}
                 />
-            </Question>
-
-            <Question
-                label="Where should Kyte deliver to?"
-                description="Move the marker to the palce you want Kyte to deliver"
-            >
-                <MapInput setValue={methods.setValue} />
             </Question>
         </>
     )

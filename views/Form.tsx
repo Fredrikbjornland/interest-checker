@@ -6,6 +6,7 @@ import Stepper from "../components/Stepper"
 import FirstFormSection from "../sections/FirstFormSection"
 import SecondFormSection from "../sections/SecondFormSection"
 import { View } from "react-native"
+import ThirdFormSection from "../sections/ThirdFormSection"
 
 export default function Form() {
     const { ...methods } = useForm<FormValues>({
@@ -18,6 +19,7 @@ export default function Form() {
                 <Stepper methods={methods}>
                     <FirstFormSection methods={methods} />
                     <SecondFormSection methods={methods} />
+                    <ThirdFormSection methods={methods} />
                 </Stepper>
             </FormProvider>
         </View>

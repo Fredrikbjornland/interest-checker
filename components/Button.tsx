@@ -19,7 +19,7 @@ export default function Button(props: ButtonProps) {
             accessibilityLabel={text}
             className={`flex flex-row items-center
             font-medium rounded-lg shadow-md  focus:outline-none border-2 border-green focus:ring-2 disabled:bg-gray-500 ${className}
-            ${outline ? "bg-white" : "bg-green"}
+            ${!outline && "bg-green"}
             ${size === "medium" && "px-3 py-1 space-x-1"}
             ${size === "large" && "px-4 py-2 space-x-2"}
             `}
