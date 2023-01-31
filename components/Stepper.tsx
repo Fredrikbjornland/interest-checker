@@ -24,8 +24,8 @@ export default function index({ children, methods }: StepperProps) {
 
     const onSubmit: SubmitHandler<FormValues> = (completedForm) => {
         setCompletedForms((oldForms) => [...oldForms, completedForm])
-        navigation.navigate("CompletedForms")
         methods.reset()
+        navigation.navigate("CompletedForms")
     }
 
     const onError: SubmitErrorHandler<FormValues> = (errors, e) => {

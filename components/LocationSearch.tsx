@@ -8,7 +8,6 @@ type MapInputProps = {
 }
 
 const LocationSearch = ({ setValue }: MapInputProps) => {
-    console.log("LocationSearch")
     return (
         <GooglePlacesAutocomplete
             placeholder="Search"
