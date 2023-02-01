@@ -2,16 +2,12 @@ import React from "react"
 import { UseFormSetValue } from "react-hook-form"
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete"
 import { Coordinate, FormValues } from "../interfaces"
-import Config from "react-native-config"
 
 type MapInputProps = {
     setValue: UseFormSetValue<FormValues>
 }
 
 const LocationSearch = ({ setValue }: MapInputProps) => {
-    console.log(Config.REACT_APP_GOOGLE_SEARCH_API_TOKEN)
-    console.log(Config)
-    console.log(process.env)
     return (
         <GooglePlacesAutocomplete
             placeholder="Search"
@@ -39,7 +35,7 @@ const LocationSearch = ({ setValue }: MapInputProps) => {
                 setValue("location", coordinate)
             }}
             query={{
-                key: Config.GOOGLE_SEARCH_API_TOKEN,
+                key: "",
                 language: "en"
             }}
         />
