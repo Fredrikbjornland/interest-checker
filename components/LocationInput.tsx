@@ -16,13 +16,13 @@ export default function LocationInput({ setValue }: MapInputProps) {
                 Place the marker where you want Kyte to deliver to
             </Text>
             <MapInput setValue={setValue} />
-            <Text className="py-2 text-base font-bold text-center text-white">Or</Text>
+            {/* <Text className="py-2 text-base font-bold text-center text-white">Or</Text>
             <View className="relative h-[150px]">
                 <Text className="mb-2 text-sm text-gray-300 ">
                     Type in the location that Kyte should deliver to
                 </Text>
                 <LocationSearch setValue={setValue} />
-            </View>
+            </View> */}
         </View>
     )
 }
